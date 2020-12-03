@@ -3,20 +3,20 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Produto;
 
 class ProdutosController extends Controller
 {
     public function index() {
 
-        $a = 10;
-        $b = 20;
-        $resultado = $a + $b;
+        $produto = new Produto();
+        $produto->nompro = "Teclado";
+        $produto->estpro = 120;
+        $produto->save();
+        
+        $produtos = Produto::all();
 
-        $arrayNumeros = [];
-        $arrayNumeros ['num1'] = $resultado;
-        $arrayNumeros ['num2'] = $a;
-
-        return view('produtos.index', compact('resultado', 'arrayNumeros'));
+        return view('produtos.index', compact('produtos'));
 
     }
 }

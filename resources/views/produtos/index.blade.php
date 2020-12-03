@@ -1,11 +1,37 @@
-<b>
-Teste com view {{$resultado}}
-<br/><br/>
-<?php echo $resultado; ?>
-<br/><br/>
+@extends('layouts.padrao')
 
-{{$arrayNumeros ['num1']}}
-<br/><br/>
-{{$arrayNumeros ['num2']}}
+@section('titulo', 'Lista de produtos')
 
-</b>
+@section('conteudo')
+
+    <!-- Example row of columns -->
+    <div class="row">
+      <div class="col-md-12">
+      
+       <table class="table table-striped">
+        <thead>
+            <tr>
+                <td>Código</td>
+                <td>Nome</td>
+                <td>Estoque</td>
+            </tr>
+        </thead>
+        <tbody>
+
+            @foreach($produtos as $produto)
+
+            <tr>
+                <td>{{$produto->codpro}}</td>
+                <td>{{$produto->nompro}}</td>
+                <td>{{$produto->estpro}}</td>
+            </tr>
+
+            @endforeach
+
+        </tbody>
+       </table>
+
+      </div>
+    </div>
+
+@endsection
