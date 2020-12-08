@@ -14,6 +14,7 @@
                 <td>Código</td>
                 <td>Nome</td>
                 <td>Estoque</td>
+                <td>Opções</td>
             </tr>
         </thead>
         <tbody>
@@ -24,6 +25,15 @@
                 <td>{{$produto->codpro}}</td>
                 <td>{{$produto->nompro}}</td>
                 <td>{{$produto->estpro}}</td>
+                <td>
+                
+                <form method="post" action="{{route('eliminar-produto')}}?codpro={{$produto->codpro}}">
+                @csrf
+                @method('DELETE')
+                <button type="submit" class="btn btn-danger">Eliminar</button>
+                </form>
+
+                </td>
             </tr>
 
             @endforeach
