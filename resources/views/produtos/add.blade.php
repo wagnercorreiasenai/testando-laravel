@@ -14,12 +14,13 @@
 
             <div class="form-group">
                 <label for="nompro" class="form-label">Nome do produto</label>
-                <input class="form-control" type="text" id="nompro" name="nompro"/>
+                <input class="form-control" type="text" value="{{$produto->nompro}}" id="nompro" name="nompro"/>
+                <input type="hidden" value="{{$produto->codpro}}" name="codpro" id="codpro"/>
             </div>
 
             <div class="form-group">
                 <label for="estpro" class="form-label">Estoque do produto</label>
-                <input class="form-control" type="number" id="estpro" name="estpro"/>
+                <input class="form-control" type="number" value="{{$produto->estpro}}" id="estpro" name="estpro"/>
             </div>
 
             <div class="form-group">
